@@ -27,7 +27,8 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: Garamond;
 }
 @media (min-width: 768px) {
   html {
@@ -59,8 +60,9 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: Garamond;
 }
 .footer {
   position: absolute;
@@ -68,4 +70,19 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.startForm{
+    border:solid 0.5rem;
+    border-color: darkgreen;
+    padding: 1rem;
+    width: 50%;
+    margin-left: 17rem;
+    margin-top: 5rem;
+}
+
+.btn-primary{
+    background-color: lightgreen;
+    border-color: lightgreen;
+    color:black;
 }
