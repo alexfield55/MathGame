@@ -86,3 +86,10 @@ body {
     border-color: lightgreen;
     color:black;
 }
+
+.mushBackground {
+    background-image: url('../images/fairytaleback.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

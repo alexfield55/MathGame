@@ -13,15 +13,15 @@ namespace MathGame.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<IndexModel> _logger;
 
         [BindProperty]
         public Player PlayerObj { get; set; }
 
-        public IndexModel(IUnitOfWork unitOfWork, ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger)
         {
-            _unitOfWork = unitOfWork;
+           // _unitOfWork = unitOfWork;
             _logger = logger;
         }
 
@@ -38,14 +38,14 @@ namespace MathGame.Pages
             }
 
             //add new player in
-            _unitOfWork.Players.Add(new Player
-            {
-                Name = PlayerObj.Name,
-                Age = PlayerObj.Age
-            });
+            //_unitOfWork.Players.Add(new Player
+            //{
+            //    Name = PlayerObj.Name,
+            //    Age = PlayerObj.Age
+            //});
 
             //go to game page
-            return RedirectToPage("/Pages/Game/GameIndex");
+            return RedirectToPage("/Game/GameIndex");
         }
     }
 }
