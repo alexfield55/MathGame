@@ -35,7 +35,7 @@ namespace MathGame
                 return Page();
             }
 
-            _context.Player.Add(Player);
+            _context.Players.Add(Player);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -30,7 +30,7 @@ namespace MathGame
                 return NotFound();
             }
 
-            Player = await _context.Player.FirstOrDefaultAsync(m => m.id == id);
+            Player = await _context.Players.FirstOrDefaultAsync(m => m.id == id);
 
             if (Player == null)
             {
@@ -71,7 +71,7 @@ namespace MathGame
 
         private bool PlayerExists(int id)
         {
-            return _context.Player.Any(e => e.id == id);
+            return _context.Players.Any(e => e.id == id);
         }
     }
 }

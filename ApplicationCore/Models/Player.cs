@@ -12,5 +12,11 @@ namespace ApplicationCore.Models
         [Key]
         [Required]
         public int id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Age { get; set; }
+
+        public int Score { get; set; }
     }
 }

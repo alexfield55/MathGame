@@ -17,7 +17,7 @@ namespace Infrastructure.Data
             _dbContext = dbContext;
         }
 
-        public IGenericRepository<Player> _Players { get; set; }
+        public IGenericRepository<Player> _Players;
 
         public IGenericRepository<Player> Players
         {

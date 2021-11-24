@@ -23,7 +23,7 @@ namespace MathGame
 
         public async Task OnGetAsync()
         {
-            Player = await _context.Player.ToListAsync();
+            Player = await _context.Players.ToListAsync();
         }
     }
 }

@@ -8,16 +8,16 @@
     <h1 class="display-4">Fairytale Math Game</h1>
     <hr />
 </div>
-<form class="startForm text-center">
+<form class="startForm text-center" method="post">
     <p class="text-center font-weight-bold">
         Tell us your name and age
     </p>
     <div class="form-row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="Name">
+            <input id="Name" asp-for="@Model.PlayerObj.Name" type="text" class="form-control" placeholder="Name">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Age">
+            <input id="Age" asp-for="@Model.PlayerObj.Age" type="text" class="form-control" placeholder="Age">
         </div>
     </div>
     <br />
@@ -34,6 +34,26 @@
             <label class="form-check-label" for="inlineRadio2">Subtraction</label>
         </div>
     </div>
-    <br/>
-    <button class="btn btn-primary">Start Game</button>
+    <br />
+    <button class="btn btn-primary" onclick="return Validate()">Start Game</button>
 </form>
+
+@section Scripts{
+    <script>
+        function Validate() {
+            if (document.getElementById("Name").value == "") {
+                swal('Error', 'Please put in your name', 'error')
+                return false;
+            }
+            if (document.getElementById("Age").value == "") {
+                swal('Error', 'Please put in your age', 'error')
+                return false;
+            }
+            if (document.getElementById("inlineRadio1").checked == false && document.getElementById("inlineRadio2").checked == false) {
+                swal('Error', 'Please select the type of game you want to play', 'error')
+                return false;
+            }
+            else return true;
+        }
+    </script>
+}

@@ -28,7 +28,7 @@ namespace MathGame
                 return NotFound();
             }
 
-            Player = await _context.Player.FirstOrDefaultAsync(m => m.id == id);
+            Player = await _context.Players.FirstOrDefaultAsync(m => m.id == id);
 
             if (Player == null)
             {
