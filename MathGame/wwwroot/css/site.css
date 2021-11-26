@@ -73,14 +73,16 @@ body {
   background-color: white;
 }
 
-.startForm{
-    border:solid 0.5rem;
+.startForm {
+    border-radius: 25px;
+    border: solid 10px;
     border-color: darkgreen;
     padding: 1rem;
     width: 50%;
     margin-left: 17rem;
     margin-top: 5rem;
-    background-color: white;
+    background-color: lightblue;
+    box-shadow: 4px 4px 8px 8px rgb(122 122 122 / 0.45);
 }
 
 .btn-primary{
@@ -89,14 +91,17 @@ body {
     color:black;
 }
 
-.mushBackground {
-    background-image: url('../images/fairytaleback.jpg');
+.imgBackground {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .logo{
-    width: 7rem;
+    width: 8rem;
     height:4rem;
+}
+
+hr {
+    border-top: 1px solid rgb(88 88 88 / 0.50);
 }
