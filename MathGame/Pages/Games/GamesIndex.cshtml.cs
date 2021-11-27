@@ -73,7 +73,7 @@ namespace MathGame.Pages.Games
                 Message = "Wrong!";
             }
 
-            if(QuestionCount>=10)
+            if(QuestionCount>=11)
             {
                 Player.Score = Score;
                 _unitOfWork.Players.Update(Player);
