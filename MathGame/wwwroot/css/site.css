@@ -114,6 +114,23 @@ hr {
 td {
     text-align: center;
     vertical-align: middle;
+    padding: 6px;
+}
+
+th{
+    padding:2px;
+}
+
+.scoresForm {
+    border-radius: 25px;
+    border: solid 10px;
+    border-color: darkgreen;
+    padding: 1rem;
+    width: 25%;
+    margin-left: 24.9rem;
+    margin-top: 5rem;
+    background-color: lightblue;
+    box-shadow: 4px 4px 8px 8px rgb(122 122 122 / 0.45);
 }
 
 

@@ -14,12 +14,11 @@ namespace MathGame.Pages.Games
         public IUnitOfWork _unitOfWork { get; set; }
 
         public List<Player> PlayerList {get;set;}
-
         public ScoresModel(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-        public void OnGet()
+        public void OnGet(int? id)
         {
             PlayerList = new List<Player>();
             PlayerList = _unitOfWork.Players.List().ToList();

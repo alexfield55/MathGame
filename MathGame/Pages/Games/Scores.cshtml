@@ -3,9 +3,12 @@
 @{
 }
 
-<body class="imgBackground text-center" style="background-image: url('../images/scores.png');">
-    <form class="startForm">
-        <table>
+<body class="imgBackground" style="background-image: url('../images/scores.png');">
+
+    <h1 class="text-center">High Scores</h1>
+
+    <form class="scoresForm text-center">
+        <table class="center">
             <tr>
                 <th>Name</th>
                 <th>Age</th>
@@ -20,5 +23,7 @@
                 </tr>
             }
         </table>
+        <hr/>
+        <button class="btn btn-primary" asp-page="/Index">Play Again</button>
     </form>
 </body>
