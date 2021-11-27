@@ -24,7 +24,7 @@ namespace MathGame.Pages.Games
         [BindProperty]
         public int CorrectAnswer { get; set; }
         [BindProperty]
-        public int _type { get; set; } //REMEBER TO LOOK AT THIS
+        public int _type { get; set; }
 
         [BindProperty]
         public string Message { get; set; }
@@ -73,7 +73,7 @@ namespace MathGame.Pages.Games
                 Message = "Wrong!";
             }
 
-            if(QuestionCount>=10)
+            if(QuestionCount>=11)
             {
                 Player.Score = Score;
                 _unitOfWork.Players.Update(Player);

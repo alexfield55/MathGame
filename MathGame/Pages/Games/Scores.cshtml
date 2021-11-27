@@ -3,18 +3,27 @@
 @{
 }
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Score</th>
-    </tr>
-    @foreach(var p in Model.PlayerList)
+<body class="imgBackground" style="background-image: url('../images/scores.png');">
+
+    <h1 class="text-center">High Scores</h1>
+
+    <form class="scoresForm text-center">
+        <table class="center">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Score</th>
+            </tr>
+            @foreach (var p in Model.PlayerList)
             {
                 <tr>
-                    <td>@p.Name</td> 
+                    <td>@p.Name</td>
                     <td>@p.Age</td>
                     <td>@p.Score</td>
                 </tr>
             }
-</table>
+        </table>
+        <hr/>
+        <button class="btn btn-primary" asp-page="/Index">Play Again</button>
+    </form>
+</body>

@@ -3,40 +3,44 @@
 @{
 }
 
-<h1>@Model.Game.gametypetoString()</h1>
-<h2>Good luck @Model.Player.Name</h2>
-<h3>Question Number @Model.QuestionCount</h3>
+<body class="imgBackground" style="background-image: url('../images/game.png');"  onload="init()">
+    <div class="text-center">
+        <h1>Fairytale @Model.Game.gametypetoString()</h1>
+        <h2>Good luck @Model.Player.Name!</h2>
+    </div>
 
-<form method="post">
-    <input asp-for="@Model.CorrectAnswer" value="@Model.Game.answer" type="hidden" />
-    <input asp-for="@Model.Game.type" type="hidden" />
-    <input asp-for="@Model.Player.Name" value="@Model.Player.Name" type="hidden" />
-    <input asp-for="@Model.Player.id" value="@Model.Player.id" type="hidden" />
-    <input asp-for="@Model.Player.Age" value="@Model.Player.Age" type="hidden" />
-    <input asp-for="@Model.Score" value="@Model.Score " type="hidden" />
-    <input asp-for="@Model.QuestionCount" value="@Model.QuestionCount" type="hidden" />
-    <table>
-        <tr>
-            <td>
-                @Model.Game.rand1
-            </td>
-            <td>
-                @Model.Game.symbol
-            </td>
-            <td>
-                @Model.Game.rand2
-            </td>
-            <td>
-                =
-            </td>
-            <td>
-                <input asp-for="@Model.Answer" type="text" />
-            </td>
-            <td>
-                <button type="submit">Next</button>
-            </td>
-        </tr>
-    </table>
-    <h1>@Model.Message</h1>
-    <h2>Your score is @Model.Score</h2>
-</form>
+    <form method="post" class="startForm text-center">
+        <h3>Question Number @Model.QuestionCount</h3>
+        <input asp-for="@Model.CorrectAnswer" value="@Model.Game.answer" type="hidden" />
+        <input asp-for="@Model.Game.type" type="hidden" />
+        <input asp-for="@Model.Player.Name" value="@Model.Player.Name" type="hidden" />
+        <input asp-for="@Model.Player.id" value="@Model.Player.id" type="hidden" />
+        <input asp-for="@Model.Player.Age" value="@Model.Player.Age" type="hidden" />
+        <input asp-for="@Model.Score" value="@Model.Score " type="hidden" />
+        <input asp-for="@Model.QuestionCount" value="@Model.QuestionCount" type="hidden" />
+        <table class="center">
+            <tr>
+                <td>
+                    @Model.Game.rand1 @Model.Game.symbol @Model.Game.rand2 =
+                </td>
+                <td>
+                    <input id="answer" asp-for="@Model.Answer" type="text" class="form-control" autofocus placeholder="0" />
+                </td>
+                <td>
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </td>
+            </tr>
+        </table>
+        <h1>@Model.Message</h1>
+        <h2>Your score is @Model.Score</h2>
+    </form>
+</body>
+
+@section Scripts{
+    <script>
+        function init() {
+            // Clear answer box here
+            document.getElementById("answer").value = "";
+        }
+    </script>
+}
