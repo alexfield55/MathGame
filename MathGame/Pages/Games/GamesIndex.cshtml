@@ -5,7 +5,7 @@
 
 <body class="imgBackground"  style="background-image: url('../images/game.png');">
     <div class="text-center">
-        <h1>@Model.Game.gametypetoString()</h1>
+        <h1>Fairytale @Model.Game.gametypetoString()</h1>
         <h2>Good luck @Model.Player.Name!</h2>
     </div>
 
@@ -18,25 +18,16 @@
         <input asp-for="@Model.Player.Age" value="@Model.Player.Age" type="hidden" />
         <input asp-for="@Model.Score" value="@Model.Score " type="hidden" />
         <input asp-for="@Model.QuestionCount" value="@Model.QuestionCount" type="hidden" />
-        <table class="align-content-center">
+        <table class="center">
             <tr>
                 <td>
-                    @Model.Game.rand1
-                </td>
-                <td>
-                    @Model.Game.symbol
-                </td>
-                <td>
-                    @Model.Game.rand2
-                </td>
-                <td>
-                    =
+                    @Model.Game.rand1 @Model.Game.symbol @Model.Game.rand2 =
                 </td>
                 <td>
                     <input asp-for="@Model.Answer" type="text" />
                 </td>
                 <td>
-                    <button type="submit">Next</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
                 </td>
             </tr>
         </table>
