@@ -12,6 +12,11 @@ namespace MathGame.Pages
         [BindProperty]
         public Player PlayerObj { get; set; }
 
+        [BindProperty]
+        public int GameId { get; set; }
+        public string[] GameTypes = new[] { "Addition", "Subtraction", "Multiplication", "Division" };
+
+
         public IndexModel(IUnitOfWork unitOfWork)
         {
            _unitOfWork = unitOfWork;
@@ -39,9 +44,8 @@ namespace MathGame.Pages
             Player p = new Player();
             p = _unitOfWork.Players.Get(p => p.Name == PlayerObj.Name);
 
-            //TODO DOUBLE CHEKC HARD CODING
             //go to game page
-            Response.Redirect("/Games/GamesIndex?id="+p.id+"&type=1");
+            Response.Redirect("/Games/GamesIndex?id="+p.id+"&type="+GameId);
         }
     }
 }

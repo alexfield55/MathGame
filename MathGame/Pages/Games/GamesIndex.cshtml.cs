@@ -24,7 +24,7 @@ namespace MathGame.Pages.Games
         [BindProperty]
         public int CorrectAnswer { get; set; }
         [BindProperty]
-        public int _type { get; set; } //REMEBER TO LOOK AT THIS
+        public int _type { get; set; }
 
         [BindProperty]
         public string Message { get; set; }

@@ -28,14 +28,11 @@
             </p>
             <hr />
 
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Addition</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Subtraction</label>
-            </div>
+            @for (int i = 0; i < Model.GameTypes.Length; i++)
+            {
+                <input type="radio" asp-for="GameId" value="@(i+1)" id="inlineRadio@(i+1)" /> 
+                <label class="form-check-label">@Model.GameTypes[i]</label>
+            }
         </div>
         <br />
         <button class="btn btn-primary" onclick="return Validate()">Start Game</button>
@@ -53,7 +50,8 @@
                 swal('Error', 'Please put in your age', 'error')
                 return false;
             }
-            if (document.getElementById("inlineRadio1").checked == false && document.getElementById("inlineRadio2").checked == false) {
+            if (document.getElementById("inlineRadio1").checked == false && document.getElementById("inlineRadio2").checked == false
+                && document.getElementById("inlineRadio3").checked == false && document.getElementById("inlineRadio4").checked == false) {
                 swal('Error', 'Please select the type of game you want to play', 'error')
                 return false;
             }
