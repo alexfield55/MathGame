@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<body class="imgBackground"  style="background-image: url('../images/CASTLE.png');">
+<body class="imgBackground" style="background-image: url('../images/CASTLE.png');">
     <div class="text-center">
         <h1 class="display-4">Fairytale Math</h1>
     </div>
@@ -12,7 +12,7 @@
         <p class="text-center font-weight-bold">
             Tell us your name and age
         </p>
-        <hr/>
+        <hr />
         <div class="form-row">
             <div class="col">
                 <input id="Name" asp-for="@Model.PlayerObj.Name" type="text" class="form-control" placeholder="Name">
@@ -30,12 +30,22 @@
 
             @for (int i = 0; i < Model.GameTypes.Length; i++)
             {
-                <input type="radio" asp-for="GameId" value="@(i+1)" id="inlineRadio@(i+1)" /> 
-                <label class="form-check-label">@Model.GameTypes[i]</label>
+                <input type="radio" asp-for="GameId" value="@(i+1)" id="inlineRadio@(i+1)" />
+                @if (i == 0)
+                {<i class="fas fa-plus"></i>}
+                @if (i == 1)
+                {<i class="fas fa-minus"></i>}
+                @if (i == 2)
+                {<i class="fas fa-times"></i>}
+                @if (i == 3)
+                {<i class="fas fa-divide"></i>}
+
+
+                <label class="form-check-label"> @Model.GameTypes[i]</label>
             }
         </div>
         <br />
-        <button class="btn btn-primary" onclick="return Validate()">Start Game</button>
+        <button class="btn btn-primary" onclick="return Validate()"><i class="fas fa-play"></i> Start Game </button>
     </form>
 </body>
 
